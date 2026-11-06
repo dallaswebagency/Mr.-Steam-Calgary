@@ -91,29 +91,46 @@ section{padding:110px 0}
 .sec-h h2{font-size:clamp(36px,4.6vw,64px);margin-top:14px}
 .sec-h p{color:var(--ink-2);max-width:520px;justify-self:end}
 
-/* versus */
-.versus{background:#fff}
-.vs-grid{display:grid;grid-template-columns:1fr 92px 1fr;border:2px solid var(--ink);box-shadow:12px 12px 0 var(--ink)}
-.vs-col{padding:0}
-.vs-head{min-height:112px;padding:22px 30px;border-bottom:2px solid var(--ink);display:flex;align-items:center;gap:16px}
-.vs-head h3{font-family:var(--disp);font-stretch:120%;font-weight:850;text-transform:uppercase;font-size:24px;letter-spacing:-.01em}
-.vs-us .vs-head{background:var(--blue);color:#fff}
-.vs-us .vs-head img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:50%;border:2px solid var(--ink)}
-.vs-them .vs-head{background:#E9EDF0;color:var(--ink-2)}
-.vs-mid{background:var(--ink);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:34px;writing-mode:vertical-rl;letter-spacing:.2em}
-.vs-row{display:flex;gap:14px;padding:20px 30px;border-bottom:1px solid var(--line);min-height:96px;align-items:center}
-.vs-row:last-child{border-bottom:0}
-.vs-row i{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:15px}
-.vs-us i{background:var(--sky);color:var(--blue);border:2px solid var(--blue)}
-.vs-them i{background:#F6E3E4;color:var(--red);border:2px solid var(--red)}
-.vs-row b{display:block;font-size:16.5px}
-.vs-row span{font-size:14.5px;color:var(--ink-2)}
-.vs-them .vs-row{color:#5B6A76}
-.docs{display:flex;gap:26px;align-items:center;margin-top:46px;flex-wrap:wrap}
-.docs a{display:flex;align-items:center;gap:14px;text-decoration:none;font-weight:600;border:2px solid var(--ink);padding:10px 18px 10px 10px;background:var(--paper);transition:.15s}
-.docs a:hover{background:var(--sky)}
-.docs img{width:46px;height:58px;object-fit:cover;object-position:top;border:1px solid var(--line)}
-.docs p{color:var(--ink-2);font-size:15px;max-width:360px}
+/* versus: fight card */
+.versus{background:var(--blue);color:#fff;position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+.versus:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 26px)}
+.versus .wrap{position:relative}
+.vs-top{text-align:center;max-width:760px;margin:0 auto 54px}
+.vs-top .kicker{color:#CFE6F2}
+.vs-top h2{font-size:clamp(38px,5vw,70px);margin:14px 0 18px}
+.vs-top p{color:#E3F1F8;font-size:18px}
+.card-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:20px;margin-bottom:26px}
+.fighter{display:flex;align-items:center;gap:18px}
+.fighter.them{justify-content:flex-end;text-align:right}
+.fighter .face{width:96px;height:96px;border-radius:50%;border:3px solid var(--ink);display:grid;place-items:center;flex:none;box-shadow:5px 5px 0 var(--ink)}
+.fighter.us .face{background:#fff}.fighter.us .face img{width:82px}
+.fighter.them .face{background:#9DB0BE;color:#fff;font-family:var(--disp);font-weight:900;font-size:44px}
+.fighter b{display:block;font-family:var(--disp);font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:clamp(22px,2.4vw,32px);line-height:1}
+.fighter small{font-size:14px;color:#CFE6F2;font-weight:600}
+.fighter.them b{color:#B9CCD9}
+.bigvs{width:92px;height:92px;background:var(--red);border:3px solid var(--ink);display:grid;place-items:center;font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:34px;transform:rotate(-8deg);box-shadow:5px 5px 0 var(--ink);margin-bottom:2px}
+.bouts{display:grid;gap:14px}
+.bout{display:grid;grid-template-columns:1fr 170px 1fr;background:#fff;color:var(--ink);border:2px solid var(--ink);box-shadow:7px 7px 0 var(--ink);transition:transform .2s,box-shadow .2s}
+.bout:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 var(--ink)}
+.bout .win,.bout .lose{display:flex;align-items:center;gap:14px;padding:20px 24px}
+.bout .win b{font-size:17.5px;line-height:1.3}
+.bout .win i,.bout .lose i{flex:none;width:34px;height:34px;display:grid;place-items:center;font-style:normal;font-weight:900;border:2px solid var(--ink)}
+.bout .win i{background:var(--blue);color:#fff}
+.bout .lose{justify-content:flex-end;text-align:right;background:#F1F4F6;color:#7A8994}
+.bout .lose span{text-decoration:line-through;text-decoration-color:rgba(180,32,42,.55);text-decoration-thickness:2px;font-size:15.5px}
+.bout .lose i{background:#fff;color:var(--red);border-color:#C9D3DA}
+.bout .topic{background:var(--ink);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--disp);font-stretch:118%;font-weight:800;text-transform:uppercase;font-size:13.5px;letter-spacing:.1em;text-align:center;padding:10px;line-height:1.2}
+.bout .topic em{font-style:normal;color:#7FC6E8;font-size:11px;letter-spacing:.16em;margin-bottom:4px}
+.verdict{margin-top:46px;display:grid;grid-template-columns:auto auto 1fr;gap:24px;align-items:center}
+.paper{position:relative;display:block;width:150px;background:#fff;border:2px solid var(--ink);padding:8px;box-shadow:6px 6px 0 var(--ink);transition:.2s;text-decoration:none;color:var(--ink)}
+.paper:nth-child(1){transform:rotate(-4deg)}.paper:nth-child(2){transform:rotate(3deg)}
+.paper:hover{transform:rotate(0) translateY(-6px)}
+.paper img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}
+.paper b{display:block;font-size:13px;margin-top:6px;text-align:center}
+.paper .ok{position:absolute;right:-14px;top:-14px;background:var(--red);color:#fff;font-family:var(--disp);font-weight:800;font-size:10.5px;letter-spacing:.1em;padding:6px 8px;border:2px solid var(--ink);transform:rotate(10deg)}
+.verdict p{font-size:18px;color:#E3F1F8;max-width:430px}
+.verdict p strong{color:#fff}
+.verdict .btn{margin-top:18px}
 
 /* services index */
 .services{background:var(--ink);color:#fff;position:relative}
@@ -275,6 +292,7 @@ footer{background:var(--ink);color:#B7C6D2;padding:80px 0 0;font-size:15px}
 .mcta{display:none}
 
 @media (max-width:1060px){
+  .bout{grid-template-columns:1fr 130px 1fr}
   nav.main,.top .btn{display:none}
   .burger{display:block}
   nav.main.open{display:flex;position:absolute;top:88px;left:0;right:0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:2px solid var(--ink);padding:12px 4vw 20px}
@@ -299,9 +317,14 @@ footer{background:var(--ink);color:#B7C6D2;padding:80px 0 0;font-size:15px}
   .hero .wrap{padding:44px 0 60px;gap:40px}
   .hero-art .cap{left:10px;bottom:10px}
   .stamp{width:112px;height:112px;right:-6px;top:-24px}.stamp img{width:72px}
-  .vs-grid{grid-template-columns:1fr}
-  .vs-mid{writing-mode:horizontal-tb;padding:10px;font-size:24px}
-  .vs-row{min-height:0}
+  .card-top{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .fighter,.fighter.them{flex-direction:column;justify-content:center;text-align:center}
+  .fighter.them .face{order:-1}
+  .bout{grid-template-columns:1fr}
+  .bout .topic{flex-direction:row;gap:8px;padding:8px}.bout .topic em{margin:0}
+  .bout .lose{justify-content:flex-start;text-align:left;flex-direction:row-reverse}
+  .verdict{grid-template-columns:1fr 1fr}.verdict>div{grid-column:1/-1}
+  .paper{width:auto}
   .claims{grid-template-columns:1fr}
   .strip{grid-template-columns:repeat(2,1fr)}
   .items{grid-template-columns:1fr}
@@ -405,33 +428,28 @@ footer{background:var(--ink);color:#B7C6D2;padding:80px 0 0;font-size:15px}
 
 <section class="versus" id="why">
   <div class="wrap">
-    <div class="sec-h">
-      <div><span class="kicker">Why choose Mr. Steam</span><h2 class="disp">Mr. Steam vs.<br>the other guys</h2></div>
-      <p>Same job, very different experience. Here is how we compare with the typical Calgary carpet cleaning company.</p>
+    <div class="vs-top">
+      <span class="kicker">Why choose Mr. Steam</span>
+      <h2 class="disp">Mr. Steam vs. the other guys</h2>
+      <p>Same job, very different experience. Here is how we stack up against the typical carpet cleaning company.</p>
     </div>
-    <div class="vs-grid">
-      <div class="vs-col vs-us">
-        <div class="vs-head"><img src="images/mr-steam-logo-static.png" alt=""><h3>Mr. Steam™</h3></div>
-        <div class="vs-row"><i>✓</i><div><b>Transparent pricing online</b><span>No hidden fees. See your price before we arrive.</span></div></div>
-        <div class="vs-row"><i>✓</i><div><b>Exact appointment arrival times</b><span>You get a time, not a window.</span></div></div>
-        <div class="vs-row"><i>✓</i><div><b>Owner-operated by a certified technician</b><span>The owner does the work.</span></div></div>
-        <div class="vs-row"><i>✓</i><div><b>Professional-grade equipment</b><span>Built for deep extraction.</span></div></div>
-        <div class="vs-row"><i>✓</i><div><b>Fully licensed, insured &amp; IHWEA certified</b><span>Documents available below.</span></div></div>
-      </div>
-      <div class="vs-mid">VS</div>
-      <div class="vs-col vs-them">
-        <div class="vs-head"><h3>The other guys</h3></div>
-        <div class="vs-row"><i>✕</i><div><b>Call for an estimate</b><span>And the price can change significantly.</span></div></div>
-        <div class="vs-row"><i>✕</i><div><b>4-hour arrival window</b><span>Plan your whole day around it.</span></div></div>
-        <div class="vs-row"><i>✕</i><div><b>Subcontracted labour</b><span>You never know who shows up.</span></div></div>
-        <div class="vs-row"><i>✕</i><div><b>Low-cost equipment</b><span>Less power, less pulled out.</span></div></div>
-        <div class="vs-row"><i>✕</i><div><b>No formal certification</b><span>Nothing to show you.</span></div></div>
-      </div>
+    <div class="card-top">
+      <div class="fighter us"><span class="face"><img src="images/mr-steam-logo-static.png" alt=""></span><div><b>Mr. Steam™</b><small>Calgary, owner-operated</small></div></div>
+      <div class="bigvs">VS</div>
+      <div class="fighter them"><div><b>The other guys</b><small>The typical company</small></div><span class="face">?</span></div>
     </div>
-    <div class="docs">
-      <a href="images/business-license.jpg" target="_blank" rel="noopener"><img src="images/business-license.jpg" alt="City of Calgary business licence">Business license</a>
-      <a href="images/insurance-document.jpg" target="_blank" rel="noopener"><img src="images/insurance-document.jpg" alt="Proof of insurance">Proof of insurance</a>
-      <p>We are happy to show our paperwork. Tap either document to view it full size.</p>
+    <div class="bouts">
+      <div class="bout"><div class="win"><i>✓</i><b>Transparent pricing online, no hidden fees</b></div><div class="topic"><em>Round 1</em>Pricing</div><div class="lose"><span>Call for an estimate that can change significantly</span><i>✕</i></div></div>
+      <div class="bout"><div class="win"><i>✓</i><b>Exact appointment arrival times</b></div><div class="topic"><em>Round 2</em>Arrival</div><div class="lose"><span>A 4-hour arrival window</span><i>✕</i></div></div>
+      <div class="bout"><div class="win"><i>✓</i><b>Owner-operated by a certified technician</b></div><div class="topic"><em>Round 3</em>Who cleans</div><div class="lose"><span>Subcontracted labour</span><i>✕</i></div></div>
+      <div class="bout"><div class="win"><i>✓</i><b>Professional-grade equipment</b></div><div class="topic"><em>Round 4</em>Equipment</div><div class="lose"><span>Low-cost equipment</span><i>✕</i></div></div>
+      <div class="bout"><div class="win"><i>✓</i><b>Fully licensed, insured &amp; IHWEA certified</b></div><div class="topic"><em>Round 5</em>Credentials</div><div class="lose"><span>No formal certification</span><i>✕</i></div></div>
+    </div>
+    <div class="verdict">
+      <a class="paper" href="images/business-license.jpg" target="_blank" rel="noopener"><span class="ok">VIEW</span><img src="images/business-license.jpg" alt="City of Calgary business licence"><b>Business license</b></a>
+      <a class="paper" href="images/insurance-document.jpg" target="_blank" rel="noopener"><span class="ok">VIEW</span><img src="images/insurance-document.jpg" alt="Proof of insurance"><b>Proof of insurance</b></a>
+      <div><p><strong>Don't just take our word for it.</strong> Our business license and proof of insurance are right here. Tap either one to view it full size.</p>
+      <a class="btn btn-red" href="https://www.mrsteamcalgary.ca/book-online/">Book Online</a></div>
     </div>
   </div>
 </section>
@@ -446,9 +464,9 @@ footer{background:var(--ink);color:#B7C6D2;padding:80px 0 0;font-size:15px}
       <a class="svc" href="https://www.mrsteamcalgary.ca/carpet-cleaning-in-calgary/"><span class="n">01</span><h3>Carpet Cleaning</h3><p>Rooms, big rooms, hallways and stairs, with no soap residue left behind.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/price-big-room.jpg" alt=""></a>
       <a class="svc" href="https://www.mrsteamcalgary.ca/rug-cleaning-in-calgary/"><span class="n">02</span><h3>Rug Cleaning</h3><p>Area rugs refreshed without damage to the fibers.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/price-rug.jpg" alt=""></a>
       <a class="svc" href="https://www.mrsteamcalgary.ca/couch-upholstery-cleaning-in-calgary/"><span class="n">03</span><h3>Couch Upholstery</h3><p>Loveseats to 5-seat sectionals, stains and odours lifted out.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/upholstery-cleaning-bryce.jpg" alt=""></a>
-      <a class="svc" href="https://www.mrsteamcalgary.ca/mattress-cleaning-in-calgary/"><span class="n">04</span><h3>Mattress Cleaning</h3><p>Safe for pets and children, with no harsh chemicals.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/result-cushion-2.jpg" alt=""></a>
-      <a class="svc" href="https://www.mrsteamcalgary.ca/commercial-carpet-cleaning-in-calgary/"><span class="n">05</span><h3>Commercial Carpet</h3><p>Trusted by Calgary businesses, hotels and retail locations.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/price-hallway.jpg" alt=""></a>
-      <a class="svc" href="https://www.mrsteamcalgary.ca/scotchgard-stain-protection/"><span class="n">06</span><h3>Scotchgard Protection</h3><p>Stain protection applied after cleaning.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/result-stairs.jpg" alt=""></a>
+      <a class="svc" href="https://www.mrsteamcalgary.ca/mattress-cleaning-in-calgary/"><span class="n">04</span><h3>Mattress Cleaning</h3><p>Safe for pets and children, with no harsh chemicals.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/mattress-cleaning.jpg" alt="Mattress cleaning"></a>
+      <a class="svc" href="https://www.mrsteamcalgary.ca/commercial-carpet-cleaning-in-calgary/"><span class="n">05</span><h3>Commercial Carpet</h3><p>Trusted by Calgary businesses, hotels and retail locations.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/commercial-carpet.jpg" alt="Commercial carpet cleaning"></a>
+      <a class="svc" href="https://www.mrsteamcalgary.ca/scotchgard-stain-protection/"><span class="n">06</span><h3>Scotchgard Protection</h3><p>Stain protection applied after cleaning.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/scotchgard.jpg" alt="Scotchgard stain protection"></a>
     </div>
   </div>
 </section>
