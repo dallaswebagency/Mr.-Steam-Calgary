@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mr. Steam™ Calgary | Carpet, Rug &amp; Upholstery Cleaning in Calgary</title>
+<meta name="description" content="Owner-operated, IHWEA certified carpet, rug, couch upholstery, mattress and commercial carpet cleaning in Calgary. Transparent online pricing, exact arrival times. Call or text (403) 702-6317.">
+<link rel="icon" href="images/mr-steam-logo-static.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0A7AAE; --blue-d:#075B83; --sky:#E3F1F8; --sky-2:#CFE6F2;
+  --red:#B4202A; --red-d:#8E1820;
+  --ink:#0F2232; --ink-2:#3B4D5C; --line:#D5DEE5;
+  --paper:#F7F9FA; --white:#fff; --warm:#F2C5A8;
+  --disp:"Archivo",system-ui,sans-serif; --body:"Instrument Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1240px,92vw);margin-inline:auto}
+.disp{font-family:var(--disp);font-stretch:125%;font-weight:850;letter-spacing:-.02em;line-height:.95;text-transform:uppercase}
+.kicker{font-family:var(--disp);font-stretch:100%;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-stretch:110%;font-weight:750;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:16px 26px;border:2px solid var(--ink);transition:transform .15s,box-shadow .15s;cursor:pointer}
+.btn-red{background:var(--red);color:#fff;box-shadow:5px 5px 0 var(--ink)}
+.btn-red:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn-line{background:#fff;color:var(--ink);box-shadow:5px 5px 0 var(--blue)}
+.btn-line:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--blue)}
+.btn svg{width:18px;height:18px}
+
+/* utility bar */
+.util{background:var(--ink);color:#C9D6E0;font-size:14px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:9px 0;flex-wrap:wrap}
+.util a{text-decoration:none;color:#fff}
+.util .pref{display:inline-flex;align-items:center;gap:8px}
+.util .dot{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 4px rgba(74,222,128,.18)}
+.util .r{display:flex;gap:22px;align-items:center}
+
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:88px}
+.logo img{height:78px;width:auto}
+nav.main{display:flex;gap:6px;align-items:center}
+.dd{position:relative}
+.dd>a{display:flex;align-items:center;gap:6px;padding:10px 14px;font-weight:600;text-decoration:none;font-size:15.5px}
+.dd>a:after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px)}
+.dd .menu{position:absolute;top:100%;left:0;min-width:250px;background:#fff;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--blue);padding:8px;display:none}
+.dd:hover .menu,.dd:focus-within .menu{display:block}
+.menu a{display:block;padding:9px 12px;text-decoration:none;font-size:15px}
+.menu a:hover{background:var(--sky)}
+.top .btn{padding:13px 20px;font-size:14px}
+.burger{display:none;background:none;border:2px solid var(--ink);width:46px;height:46px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px auto}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--sky);border-bottom:2px solid var(--ink)}
+.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(10,122,174,.18) 1.4px,transparent 1.5px);background-size:22px 22px;mask-image:linear-gradient(90deg,#000 0,transparent 55%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:72px 0 84px}
+.hero h1{font-size:clamp(42px,5.4vw,78px);margin:18px 0 26px}
+.hero h1 .sc{display:inline-block;color:#fff;background:var(--blue);padding:0 .14em;transform:rotate(-1.5deg);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);margin:.06em 0}
+.hero h1 .hire{display:block;color:var(--red);font-stretch:100%;font-size:.86em;margin-top:.12em}
+.hero p.lead{font-size:19px;max-width:540px;color:var(--ink-2)}
+.hero .ctas{display:flex;gap:18px;flex-wrap:wrap;margin:34px 0 38px}
+.creds{display:flex;flex-wrap:wrap;gap:10px}
+.creds span{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--ink);padding:7px 12px;font-size:14px;font-weight:600}
+.creds svg{width:16px;height:16px;color:var(--blue)}
+.hero-art{position:relative}
+.panel{border:2px solid var(--ink);box-shadow:12px 12px 0 var(--red);background:#fff}
+.hero-art .panel img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.hero-art .cap{position:absolute;left:-34px;bottom:46px;background:#fff;border:2px solid var(--ink);padding:14px 18px;box-shadow:6px 6px 0 var(--ink);max-width:260px}
+.hero-art .cap b{display:block;font-family:var(--disp);font-stretch:115%;font-size:15px;text-transform:uppercase;letter-spacing:.03em}
+.hero-art .cap small{color:var(--ink-2);font-size:13.5px;line-height:1.4;display:block;margin-top:4px}
+.stamp{position:absolute;right:-30px;top:-34px;width:148px;height:148px;border-radius:50%;background:var(--ink);display:grid;place-items:center;border:2px solid var(--ink)}
+.stamp svg{position:absolute;inset:0;animation:spin 22s linear infinite}
+.stamp img{width:96px;height:auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ticker */
+.ticker{background:var(--red);color:#fff;border-bottom:2px solid var(--ink);overflow:hidden;white-space:nowrap}
+.ticker .row{display:inline-flex;gap:46px;padding:15px 0;animation:tick 34s linear infinite;font-family:var(--disp);font-stretch:118%;font-weight:750;font-size:16px;letter-spacing:.07em;text-transform:uppercase}
+.ticker .row span{display:inline-flex;align-items:center;gap:46px}
+.ticker .row span:after{content:"✦";color:var(--warm)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+.sec-h{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.sec-h h2{font-size:clamp(36px,4.6vw,64px);margin-top:14px}
+.sec-h p{color:var(--ink-2);max-width:520px;justify-self:end}
+
+/* versus */
+.versus{background:#fff}
+.vs-grid{display:grid;grid-template-columns:1fr 92px 1fr;border:2px solid var(--ink);box-shadow:12px 12px 0 var(--ink)}
+.vs-col{padding:0}
+.vs-head{min-height:112px;padding:22px 30px;border-bottom:2px solid var(--ink);display:flex;align-items:center;gap:16px}
+.vs-head h3{font-family:var(--disp);font-stretch:120%;font-weight:850;text-transform:uppercase;font-size:24px;letter-spacing:-.01em}
+.vs-us .vs-head{background:var(--blue);color:#fff}
+.vs-us .vs-head img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:50%;border:2px solid var(--ink)}
+.vs-them .vs-head{background:#E9EDF0;color:var(--ink-2)}
+.vs-mid{background:var(--ink);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:34px;writing-mode:vertical-rl;letter-spacing:.2em}
+.vs-row{display:flex;gap:14px;padding:20px 30px;border-bottom:1px solid var(--line);min-height:96px;align-items:center}
+.vs-row:last-child{border-bottom:0}
+.vs-row i{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:15px}
+.vs-us i{background:var(--sky);color:var(--blue);border:2px solid var(--blue)}
+.vs-them i{background:#F6E3E4;color:var(--red);border:2px solid var(--red)}
+.vs-row b{display:block;font-size:16.5px}
+.vs-row span{font-size:14.5px;color:var(--ink-2)}
+.vs-them .vs-row{color:#5B6A76}
+.docs{display:flex;gap:26px;align-items:center;margin-top:46px;flex-wrap:wrap}
+.docs a{display:flex;align-items:center;gap:14px;text-decoration:none;font-weight:600;border:2px solid var(--ink);padding:10px 18px 10px 10px;background:var(--paper);transition:.15s}
+.docs a:hover{background:var(--sky)}
+.docs img{width:46px;height:58px;object-fit:cover;object-position:top;border:1px solid var(--line)}
+.docs p{color:var(--ink-2);font-size:15px;max-width:360px}
+
+/* services index */
+.services{background:var(--ink);color:#fff;position:relative}
+.services .kicker{color:#7FC6E8}
+.services .sec-h p{color:#B7C6D2}
+.svc-list{border-top:1.5px solid rgba(255,255,255,.22)}
+.svc{display:grid;grid-template-columns:90px 1.2fr 1fr 60px;gap:24px;align-items:center;padding:28px 0;border-bottom:1.5px solid rgba(255,255,255,.22);text-decoration:none;position:relative;transition:padding .25s}
+.svc .n{font-family:var(--disp);font-stretch:100%;font-weight:600;color:#7FC6E8;font-size:15px;letter-spacing:.1em}
+.svc h3{font-family:var(--disp);font-stretch:125%;font-weight:850;text-transform:uppercase;font-size:clamp(26px,3.2vw,44px);letter-spacing:-.02em;line-height:1}
+.svc p{color:#B7C6D2;font-size:15.5px}
+.svc .arr{width:52px;height:52px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;transition:.2s}
+.svc .arr svg{width:20px;height:20px}
+.svc .peek{position:absolute;right:120px;top:50%;width:230px;aspect-ratio:4/3;object-fit:cover;border:2px solid #fff;transform:translateY(-50%) rotate(3deg) scale(.85);opacity:0;pointer-events:none;transition:.25s;box-shadow:8px 8px 0 var(--red)}
+.svc:hover{padding-left:16px}
+.svc:hover h3{color:#7FC6E8}
+.svc:hover .arr{background:var(--red);border-color:var(--red)}
+.svc:hover .peek{opacity:1;transform:translateY(-50%) rotate(3deg) scale(1)}
+
+/* results */
+.results{background:var(--paper)}
+.res-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:start}
+.ba{position:relative;border:2px solid var(--ink);box-shadow:12px 12px 0 var(--blue);overflow:hidden;aspect-ratio:2/3;max-height:720px;user-select:none;touch-action:none;background:#ddd}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 50%)}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%)}
+.ba .handle:after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--red);border:3px solid #fff;color:#fff;display:grid;place-items:center;font-size:24px;font-weight:700}
+.ba .tag{position:absolute;top:16px;padding:6px 12px;font-family:var(--disp);font-stretch:115%;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--ink)}
+.ba .t-b{left:16px;background:#fff}
+.ba .t-a{right:16px;background:var(--blue);color:#fff}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
+.res-copy h2{font-size:clamp(36px,4.4vw,60px);margin:14px 0 22px}
+.res-copy>p{color:var(--ink-2);margin-bottom:30px}
+.claims{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:38px}
+.claims li{list-style:none;display:flex;gap:10px;align-items:center;font-weight:600;background:#fff;border:1.5px solid var(--line);padding:12px 14px;font-size:15px}
+.claims li:before{content:"";flex:none;width:20px;height:20px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat}
+.claims li.tm{border-color:var(--blue);background:var(--sky)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.strip figure{position:relative;border:2px solid var(--ink);overflow:hidden;background:#fff}
+.strip img{aspect-ratio:1;object-fit:cover;width:100%;transition:transform .4s}
+.strip figure:hover img{transform:scale(1.07)}
+.strip figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(15,34,50,.85));color:#fff;font-size:12.5px;font-weight:600;padding:20px 8px 7px}
+
+/* pricing / estimate */
+.pricing{background:#fff;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.est{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start}
+.items{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.item{border:2px solid var(--ink);background:var(--paper);display:flex;flex-direction:column;transition:.15s}
+.item.on{box-shadow:7px 7px 0 var(--blue);transform:translate(-3px,-3px);background:#fff}
+.item .ph{position:relative;border-bottom:2px solid var(--ink)}
+.item .ph img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.item .price{position:absolute;right:-2px;top:14px;background:var(--red);color:#fff;font-family:var(--disp);font-stretch:110%;font-weight:850;font-size:22px;padding:6px 14px 6px 12px;border:2px solid var(--ink);border-right:0}
+.item .price small{font-size:11px;font-weight:700;letter-spacing:.08em;display:block;line-height:1;opacity:.85;text-transform:uppercase}
+.item .bd{padding:16px 18px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex:1}
+.item h4{font-family:var(--disp);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:17px;line-height:1.1}
+.item h4 small{display:block;font-family:var(--body);text-transform:none;font-weight:500;font-size:13.5px;color:var(--ink-2);margin-top:4px;letter-spacing:0}
+.qty{display:flex;align-items:center;border:2px solid var(--ink);background:#fff;flex:none}
+.qty button{width:34px;height:34px;border:0;background:none;font-size:20px;font-weight:700;cursor:pointer;color:var(--ink)}
+.qty button:hover{background:var(--sky)}
+.qty output{width:28px;text-align:center;font-weight:700}
+.summary{position:sticky;top:112px;background:var(--ink);color:#fff;border:2px solid var(--ink);box-shadow:10px 10px 0 var(--red);padding:30px}
+.summary h3{font-family:var(--disp);font-stretch:120%;font-weight:850;text-transform:uppercase;font-size:24px;line-height:1.05}
+.summary .lines{margin:22px 0;min-height:90px;border-top:1px dashed rgba(255,255,255,.3);border-bottom:1px dashed rgba(255,255,255,.3);padding:14px 0;font-size:15px}
+.summary .lines div{display:flex;justify-content:space-between;padding:4px 0;color:#C9D6E0}
+.summary .lines .empty{color:#8FA3B3;font-style:italic}
+.summary .tot{display:flex;justify-content:space-between;align-items:baseline}
+.summary .tot b{font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:52px;line-height:1;color:#7FC6E8}
+.summary .note{font-size:13px;color:#9FB2C1;margin:14px 0 22px;line-height:1.5}
+.summary .btn{width:100%;justify-content:center;box-shadow:5px 5px 0 #fff}
+.summary .alt{display:block;text-align:center;margin-top:16px;font-size:14.5px;color:#C9D6E0}
+.summary .alt a{color:#fff;font-weight:700}
+
+/* promise */
+.promise{background:var(--sky);position:relative;overflow:hidden}
+.pr-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.pr-photo{position:relative}
+.pr-photo .panel{box-shadow:-12px 12px 0 var(--blue);transform:rotate(-1.5deg)}
+.pr-photo .panel img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.pr-photo .sig{position:absolute;right:-18px;bottom:-30px;background:#fff;border:2px solid var(--ink);padding:14px 20px;box-shadow:6px 6px 0 var(--ink);transform:rotate(2deg)}
+.pr-photo .sig b{font-family:var(--disp);font-stretch:118%;text-transform:uppercase;font-size:18px;display:block}
+.pr-photo .sig span{font-size:13.5px;color:var(--ink-2)}
+.pr-copy h2{font-size:clamp(38px,4.8vw,66px);margin:14px 0 26px}
+.pr-copy blockquote{font-family:var(--disp);font-stretch:95%;font-weight:600;font-size:clamp(22px,2.2vw,29px);line-height:1.3;border-left:6px solid var(--red);padding-left:24px;margin-bottom:24px;text-transform:none;letter-spacing:-.01em}
+.pr-copy p{color:var(--ink-2);margin-bottom:30px;max-width:560px}
+
+/* reviews */
+.reviews{background:var(--paper)}
+.rv-grid{columns:3 320px;column-gap:24px}
+.rv{break-inside:avoid;margin-bottom:24px;background:#fff;border:2px solid var(--ink);padding:26px 26px 22px;position:relative}
+.rv:nth-child(3n+1){box-shadow:7px 7px 0 var(--blue)}
+.rv:nth-child(3n+2){box-shadow:7px 7px 0 var(--red)}
+.rv:nth-child(3n){box-shadow:7px 7px 0 var(--ink)}
+.rv .stars{color:#F5A623;letter-spacing:3px;font-size:18px}
+.rv p{margin:12px 0 18px;font-size:16.5px}
+.rv .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.rv .av{width:40px;height:40px;border-radius:50%;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-weight:800;font-family:var(--disp);border:2px solid var(--blue)}
+.rv .who b{display:block;font-size:15px;line-height:1.2}
+.rv .who small{color:var(--ink-2);font-size:13px;display:flex;align-items:center;gap:5px}
+.rv .g{width:14px;height:14px}
+
+/* clients */
+.clients{padding:70px 0;background:#fff;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.clients .wrap{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center}
+.clients h3{font-family:var(--disp);font-stretch:118%;font-weight:850;text-transform:uppercase;font-size:24px;line-height:1.05}
+.logos{display:grid;grid-template-columns:repeat(5,1fr);border-left:1.5px solid var(--line);border-top:1.5px solid var(--line)}
+.logos div{border-right:1.5px solid var(--line);border-bottom:1.5px solid var(--line);display:grid;place-items:center;padding:14px;aspect-ratio:16/10}
+.logos img{max-height:74px;width:auto;filter:grayscale(1);opacity:.75;transition:.2s}
+.logos div:hover img{filter:none;opacity:1}
+
+/* learn more */
+.learn{padding:110px 0;background:var(--paper)}
+.lm-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.lm{position:relative;border:2px solid var(--ink);overflow:hidden;min-height:440px;display:flex;align-items:flex-end;text-decoration:none;color:#fff}
+.lm img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.lm:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(15,34,50,.92))}
+.lm:hover img{transform:scale(1.05)}
+.lm .in{position:relative;z-index:2;padding:34px;width:100%;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.lm .in small{font-family:var(--disp);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;color:#7FC6E8}
+.lm h3{font-family:var(--disp);font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:clamp(28px,3vw,42px);line-height:1;margin-top:8px}
+.lm .go{flex:none;background:var(--red);border:2px solid #fff;padding:12px 18px;font-family:var(--disp);font-weight:750;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+
+/* contact */
+.contact{background:var(--blue);color:#fff;border-top:2px solid var(--ink)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact .kicker{color:#CFE6F2}
+.contact h2{font-size:clamp(40px,5vw,72px);margin:14px 0 26px}
+.contact .area{font-size:19px;color:#E3F1F8;margin-bottom:34px;max-width:480px}
+.ct-list{display:grid;gap:14px}
+.ct-list a,.ct-list div{display:flex;gap:16px;align-items:center;text-decoration:none;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.35);padding:16px 18px}
+.ct-list a:hover{background:rgba(255,255,255,.16)}
+.ct-list svg{width:24px;height:24px;flex:none}
+.ct-list small{display:block;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#CFE6F2;font-weight:600}
+.ct-list b{font-size:18px}
+form.card{background:#fff;color:var(--ink);border:2px solid var(--ink);box-shadow:12px 12px 0 var(--ink);padding:36px}
+form.card h3{font-family:var(--disp);font-stretch:120%;font-weight:850;text-transform:uppercase;font-size:26px;line-height:1.05;margin-bottom:6px}
+form.card>p{color:var(--ink-2);font-size:15px;margin-bottom:22px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px}
+input,textarea,select{display:block;width:100%;margin-top:6px;font:inherit;font-size:16px;text-transform:none;letter-spacing:0;font-weight:400;border:2px solid var(--ink);padding:12px 14px;background:var(--paper);border-radius:0}
+input:focus,textarea:focus,select:focus{outline:0;border-color:var(--blue);background:#fff}
+textarea{min-height:110px;resize:vertical}
+form.card .btn{width:100%;justify-content:center;margin-top:6px}
+
+/* footer */
+footer{background:var(--ink);color:#B7C6D2;padding:80px 0 0;font-size:15px}
+.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:44px}
+.ft .brand img{width:170px;background:#fff;border-radius:14px;padding:8px}
+.ft .brand p{margin-top:18px;max-width:300px}
+.ft h5{font-family:var(--disp);font-stretch:115%;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;font-size:14px;margin-bottom:18px}
+.ft ul{list-style:none;display:grid;gap:9px}
+.ft a{text-decoration:none}
+.ft a:hover{color:#fff}
+.ft .yt{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:#fff;border:1.5px solid rgba(255,255,255,.35);padding:9px 14px}
+.franchise{margin-top:56px;padding:20px 0;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px;color:#8FA3B3}
+.franchise a{text-decoration:underline}
+.legal{border-top:1px solid rgba(255,255,255,.14);padding:22px 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px}
+.legal a{color:#fff;font-weight:600}
+
+/* mobile cta */
+.mcta{display:none}
+
+@media (max-width:1060px){
+  nav.main,.top .btn{display:none}
+  .burger{display:block}
+  nav.main.open{display:flex;position:absolute;top:88px;left:0;right:0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:2px solid var(--ink);padding:12px 4vw 20px}
+  nav.main.open .dd .menu{position:static;display:block;border:0;box-shadow:none;padding:0 0 0 14px}
+  .hero .wrap,.res-grid,.pr-grid,.ct-grid,.est{grid-template-columns:1fr}
+  .hero-art{max-width:520px;margin:0 auto 20px}
+  .sec-h{grid-template-columns:1fr}.sec-h p{justify-self:start}
+  .svc{grid-template-columns:56px 1fr 52px}.svc p{display:none}.svc .peek{display:none}
+  .items{grid-template-columns:repeat(2,1fr)}
+  .summary{position:static}
+  .clients .wrap{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}
+  .ba{max-width:520px}
+}
+@media (max-width:700px){
+  body{font-size:16px}
+  section,.learn{padding:76px 0}
+  .util .r a.em{display:none}
+  .logo img{height:64px}
+  .top .wrap{height:76px}
+  nav.main.open{top:76px}
+  .hero .wrap{padding:44px 0 60px;gap:40px}
+  .hero-art .cap{left:10px;bottom:10px}
+  .stamp{width:112px;height:112px;right:-6px;top:-24px}.stamp img{width:72px}
+  .vs-grid{grid-template-columns:1fr}
+  .vs-mid{writing-mode:horizontal-tb;padding:10px;font-size:24px}
+  .vs-row{min-height:0}
+  .claims{grid-template-columns:1fr}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .items{grid-template-columns:1fr}
+  .logos{grid-template-columns:repeat(2,1fr)}
+  .lm-grid{grid-template-columns:1fr}.lm{min-height:340px}
+  .lm .in{flex-direction:column;align-items:flex-start}
+  .f2{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr}
+  form.card{padding:24px}
+  .mcta{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;border-top:2px solid var(--ink)}
+  .mcta a{padding:15px;text-align:center;font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:14px;text-decoration:none}
+  .mcta a:first-child{background:#fff;color:var(--ink)}.mcta a:last-child{background:var(--red);color:#fff}
+  footer{padding-bottom:56px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <span class="pref"><span class="dot"></span>Call or text (text preferred): <a href="sms:(403)-702-6317">(403) 702-6317</a></span>
+    <div class="r">
+      <a class="em" href="mailto:MrSteamCalgary@gmail.com">MrSteamCalgary@gmail.com</a>
+      <a href="https://www.mrsteamcalgary.ca/book-online/"><b>Book Online →</b></a>
+    </div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://www.mrsteamcalgary.ca/" aria-label="Mr. Steam Calgary home"><img src="images/mr-steam-logo.webp" alt="Mr. Steam™ Calgary logo"></a>
+    <nav class="main" id="nav">
+      <div class="dd"><a href="https://www.mrsteamcalgary.ca/about-us/">About Us</a>
+        <div class="menu">
+          <a href="https://www.mrsteamcalgary.ca/about-us/">About Mr. Steam Calgary</a>
+          <a href="https://youtube.com/playlist?list=PL2dK6uAU74kC8xPjHZ0byRFYKUOrXIdQt&amp;si=_1uuT6HFdLBeeiTe" target="_blank" rel="noopener">Videos</a>
+          <a href="https://app.squareup.com/gift/MLYXGEZXGC4H4/order" target="_blank" rel="noopener">Gift Cards</a>
+          <a href="https://67feaab1.sibforms.com/serve/MUIFAPlQqmr0jaw5J3Q8YV6QThJzhxYLB0cLQYeCmaISYeUOjTezdFFQWV1silJirPPL4dwEV0YFzxKKU46OgUxYQB-00G397CN2sjX9bhwYEayqlL7DAwHOz7Ny2NlgMbpHxRm98l8ThTmML5del2Y-sE11NhVdQrJHrPU0z_RKl9ANP_ZIh73Zx5maPmQ96vVOpAZv0Tx_ZH-b" target="_blank" rel="noopener">Coupon Sign-Up</a>
+        </div>
+      </div>
+      <div class="dd"><a href="#services">Services</a>
+        <div class="menu">
+          <a href="https://www.mrsteamcalgary.ca/carpet-cleaning-in-calgary/">Carpet Cleaning</a>
+          <a href="https://www.mrsteamcalgary.ca/rug-cleaning-in-calgary/">Rug Cleaning</a>
+          <a href="https://www.mrsteamcalgary.ca/couch-upholstery-cleaning-in-calgary/">Couch Upholstery Cleaning</a>
+          <a href="https://www.mrsteamcalgary.ca/mattress-cleaning-in-calgary/">Mattress Cleaning</a>
+          <a href="https://www.mrsteamcalgary.ca/commercial-carpet-cleaning-in-calgary/">Commercial Carpet Cleaning</a>
+          <a href="https://www.mrsteamcalgary.ca/scotchgard-stain-protection/">Scotchgard Stain Protection</a>
+        </div>
+      </div>
+      <div class="dd"><a href="https://www.mrsteamcalgary.ca/faq/">FAQ</a>
+        <div class="menu">
+          <a href="https://www.mrsteamcalgary.ca/faq/">FAQ</a>
+          <a href="https://www.mrsteamfranchising.com/blog/" target="_blank" rel="noopener">Blog</a>
+          <a href="https://www.mrsteamfranchising.com/stain-removal-diy-guide/" target="_blank" rel="noopener">Stain Removal DIY Guide</a>
+        </div>
+      </div>
+    </nav>
+    <a class="btn btn-red" href="https://www.mrsteamcalgary.ca/book-online/">Book Online</a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Calgary carpet, rug &amp; upholstery cleaning</span>
+      <h1 class="disp">When you need it <span class="sc">super clean</span> <span class="hire">Hire Mr. Steam!</span></h1>
+      <p class="lead">Owner-operated by a certified technician. Transparent pricing online, exact arrival times and TruSteam™ technology that is safe for pets and children.</p>
+      <div class="ctas">
+        <a class="btn btn-red" href="https://www.mrsteamcalgary.ca/book-online/">Book Online
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="https://youtube.com/playlist?list=PL2dK6uAU74kC8xPjHZ0byRFYKUOrXIdQt&amp;si=_1uuT6HFdLBeeiTe" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Watch us clean on YouTube</a>
+      </div>
+      <div class="creds">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Licensed &amp; insured</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>IHWEA certified</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Exact arrival times</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="panel"><img src="images/carpet-cleaning-bryce.jpg" alt="Mr. Steam technician steam cleaning carpet in a Calgary living room"></div>
+      <div class="cap"><b>Owner-operated</b><small>Bryce Gilbert, certified technician, on every job.</small></div>
+      <div class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 148 148"><defs><path id="c" d="M74,74 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0"/></defs>
+          <text fill="#fff" font-family="Archivo" font-weight="800" font-size="12.5" letter-spacing="3.2"><textPath href="#c">TRUSTEAM™ TECHNOLOGY ✦ NO SOAP RESIDUE ✦ </textPath></text></svg>
+        <img src="images/mr-steam-logo-static.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="row">
+    <span>Carpet cleaning</span><span>Rug cleaning</span><span>Couch upholstery</span><span>Mattress cleaning</span><span>Commercial carpet</span><span>Scotchgard stain protection</span>
+    <span>Carpet cleaning</span><span>Rug cleaning</span><span>Couch upholstery</span><span>Mattress cleaning</span><span>Commercial carpet</span><span>Scotchgard stain protection</span>
+  </div>
+</div>
+
+<section class="versus" id="why">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><span class="kicker">Why choose Mr. Steam</span><h2 class="disp">Mr. Steam vs.<br>the other guys</h2></div>
+      <p>Same job, very different experience. Here is how we compare with the typical Calgary carpet cleaning company.</p>
+    </div>
+    <div class="vs-grid">
+      <div class="vs-col vs-us">
+        <div class="vs-head"><img src="images/mr-steam-logo-static.png" alt=""><h3>Mr. Steam™</h3></div>
+        <div class="vs-row"><i>✓</i><div><b>Transparent pricing online</b><span>No hidden fees. See your price before we arrive.</span></div></div>
+        <div class="vs-row"><i>✓</i><div><b>Exact appointment arrival times</b><span>You get a time, not a window.</span></div></div>
+        <div class="vs-row"><i>✓</i><div><b>Owner-operated by a certified technician</b><span>The owner does the work.</span></div></div>
+        <div class="vs-row"><i>✓</i><div><b>Professional-grade equipment</b><span>Built for deep extraction.</span></div></div>
+        <div class="vs-row"><i>✓</i><div><b>Fully licensed, insured &amp; IHWEA certified</b><span>Documents available below.</span></div></div>
+      </div>
+      <div class="vs-mid">VS</div>
+      <div class="vs-col vs-them">
+        <div class="vs-head"><h3>The other guys</h3></div>
+        <div class="vs-row"><i>✕</i><div><b>Call for an estimate</b><span>And the price can change significantly.</span></div></div>
+        <div class="vs-row"><i>✕</i><div><b>4-hour arrival window</b><span>Plan your whole day around it.</span></div></div>
+        <div class="vs-row"><i>✕</i><div><b>Subcontracted labour</b><span>You never know who shows up.</span></div></div>
+        <div class="vs-row"><i>✕</i><div><b>Low-cost equipment</b><span>Less power, less pulled out.</span></div></div>
+        <div class="vs-row"><i>✕</i><div><b>No formal certification</b><span>Nothing to show you.</span></div></div>
+      </div>
+    </div>
+    <div class="docs">
+      <a href="images/business-license.jpg" target="_blank" rel="noopener"><img src="images/business-license.jpg" alt="City of Calgary business licence">Business license</a>
+      <a href="images/insurance-document.jpg" target="_blank" rel="noopener"><img src="images/insurance-document.jpg" alt="Proof of insurance">Proof of insurance</a>
+      <p>We are happy to show our paperwork. Tap either document to view it full size.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><span class="kicker">Cleaning services</span><h2 class="disp">What we clean</h2></div>
+      <p>Carpet, rugs, couches, mattresses and commercial spaces across Calgary and surrounding areas, plus Scotchgard protection to keep it clean longer.</p>
+    </div>
+    <div class="svc-list">
+      <a class="svc" href="https://www.mrsteamcalgary.ca/carpet-cleaning-in-calgary/"><span class="n">01</span><h3>Carpet Cleaning</h3><p>Rooms, big rooms, hallways and stairs, with no soap residue left behind.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/price-big-room.jpg" alt=""></a>
+      <a class="svc" href="https://www.mrsteamcalgary.ca/rug-cleaning-in-calgary/"><span class="n">02</span><h3>Rug Cleaning</h3><p>Area rugs refreshed without damage to the fibers.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/price-rug.jpg" alt=""></a>
+      <a class="svc" href="https://www.mrsteamcalgary.ca/couch-upholstery-cleaning-in-calgary/"><span class="n">03</span><h3>Couch Upholstery</h3><p>Loveseats to 5-seat sectionals, stains and odours lifted out.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/upholstery-cleaning-bryce.jpg" alt=""></a>
+      <a class="svc" href="https://www.mrsteamcalgary.ca/mattress-cleaning-in-calgary/"><span class="n">04</span><h3>Mattress Cleaning</h3><p>Safe for pets and children, with no harsh chemicals.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/result-cushion-2.jpg" alt=""></a>
+      <a class="svc" href="https://www.mrsteamcalgary.ca/commercial-carpet-cleaning-in-calgary/"><span class="n">05</span><h3>Commercial Carpet</h3><p>Trusted by Calgary businesses, hotels and retail locations.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/price-hallway.jpg" alt=""></a>
+      <a class="svc" href="https://www.mrsteamcalgary.ca/scotchgard-stain-protection/"><span class="n">06</span><h3>Scotchgard Protection</h3><p>Stain protection applied after cleaning.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span><img class="peek" src="images/result-stairs.jpg" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<section class="results" id="results">
+  <div class="wrap res-grid">
+    <div>
+      <div class="ba" id="ba">
+        <img src="images/ba-before.jpg" alt="Carpet stain before Mr. Steam cleaning">
+        <img class="after" src="images/ba-after.jpg" alt="Same carpet after Mr. Steam cleaning">
+        <span class="tag t-b">Before</span><span class="tag t-a">After</span>
+        <div class="handle"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+      </div>
+    </div>
+    <div class="res-copy">
+      <span class="kicker">Our before &amp; after results</span>
+      <h2 class="disp">Drag the slider. See the difference.</h2>
+      <p>Stain removal, dirt removal and upholstery cleaning, photographed on real Calgary jobs.</p>
+      <ul class="claims">
+        <li>No harsh chemicals</li><li>No soap residue</li>
+        <li>No damage to carpet fibers</li><li>Warranty approved</li>
+        <li>Safe for pets &amp; children</li><li class="tm">TruSteam™ technology</li>
+      </ul>
+      <div class="strip">
+        <figure><img src="images/result-cushion.jpg" alt="Upholstery cushion half cleaned"><figcaption>Cushion</figcaption></figure>
+        <figure><img src="images/result-stairs.jpg" alt="Carpeted stairs half cleaned"><figcaption>Stairs</figcaption></figure>
+        <figure><img src="images/result-couch.jpg" alt="Couch half cleaned"><figcaption>Couch</figcaption></figure>
+        <figure><img src="images/result-smile.jpg" alt="Smiley face cleaned into a dirty carpet"><figcaption>Carpet smile</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><span class="kicker">Transparent pricing</span><h2 class="disp">Build your<br>estimate</h2></div>
+      <p>Our starting rates, right here. Add what you need and see your starting total before you book. No call needed.</p>
+    </div>
+    <div class="est">
+      <div class="items" id="items">
+        <div class="item" data-name="Room" data-price="69"><div class="ph"><img src="images/price-room.jpg" alt="Carpet room after cleaning"><span class="price"><small>from</small>$69</span></div><div class="bd"><h4>Room<small>Under 200 ft²</small></h4><div class="qty"><button aria-label="Remove">−</button><output>0</output><button aria-label="Add">+</button></div></div></div>
+        <div class="item" data-name="Big room" data-price="99"><div class="ph"><img src="images/price-big-room.jpg" alt="Big room carpet after cleaning"><span class="price"><small>from</small>$99</span></div><div class="bd"><h4>Big room<small>Up to 400 ft²</small></h4><div class="qty"><button aria-label="Remove">−</button><output>0</output><button aria-label="Add">+</button></div></div></div>
+        <div class="item" data-name="Hallway" data-price="49"><div class="ph"><img src="images/price-hallway.jpg" alt="Hallway carpet being cleaned"><span class="price"><small>from</small>$49</span></div><div class="bd"><h4>Hallway<small>Carpet cleaning</small></h4><div class="qty"><button aria-label="Remove">−</button><output>0</output><button aria-label="Add">+</button></div></div></div>
+        <div class="item" data-name="Loveseat sofa" data-price="149"><div class="ph"><img src="images/price-loveseat.jpg" alt="Clean blue loveseat sofa"><span class="price"><small>from</small>$149</span></div><div class="bd"><h4>Loveseat sofa<small>Upholstery cleaning</small></h4><div class="qty"><button aria-label="Remove">−</button><output>0</output><button aria-label="Add">+</button></div></div></div>
+        <div class="item" data-name="5-seat sectional" data-price="299"><div class="ph"><img src="images/price-sectional.jpg" alt="Clean 5-seat sectional"><span class="price"><small>from</small>$299</span></div><div class="bd"><h4>5-seat sectional<small>Upholstery cleaning</small></h4><div class="qty"><button aria-label="Remove">−</button><output>0</output><button aria-label="Add">+</button></div></div></div>
+        <div class="item" data-name="Rug" data-price="49"><div class="ph"><img src="images/price-rug.jpg" alt="Clean area rug"><span class="price"><small>from</small>$49</span></div><div class="bd"><h4>Rug cleaning<small>Area rugs</small></h4><div class="qty"><button aria-label="Remove">−</button><output>0</output><button aria-label="Add">+</button></div></div></div>
+      </div>
+      <aside class="summary">
+        <h3>Your starting estimate</h3>
+        <div class="lines" id="lines"><span class="empty">Add a room, couch or rug to begin.</span></div>
+        <div class="tot"><span>Starting total</span><b id="total">$0</b></div>
+        <p class="note">Based on our starting rates. No hidden fees.</p>
+        <a class="btn btn-red" href="https://www.mrsteamcalgary.ca/book-online/">Book Online</a>
+        <span class="alt">Prefer to text? <a id="smsq" href="sms:(403)-702-6317">(403) 702-6317</a></span>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="promise" id="promise">
+  <div class="wrap pr-grid">
+    <div class="pr-photo">
+      <div class="panel"><img src="images/bryce-van.jpg" alt="Owner Bryce Gilbert in the Mr. Steam van in Calgary"></div>
+      <div class="sig"><b>Bryce Gilbert</b><span>Owner-operator, Mr. Steam™ Calgary</span></div>
+    </div>
+    <div class="pr-copy">
+      <span class="kicker">Our word to you</span>
+      <h2 class="disp">The Mr. Steam™ Promise</h2>
+      <blockquote>We will treat your home as if it were our own.</blockquote>
+      <p>It comes down to one simple rule: treat others the way you would like to be treated. That is how every Mr. Steam Calgary job is done, from the first text to the final walkthrough.</p>
+      <a class="btn btn-red" href="https://www.mrsteamcalgary.ca/book-online/">Book Online</a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><span class="kicker">Google reviews</span><h2 class="disp">Calgary says<br>it best</h2></div>
+      <p>Real feedback from homeowners we have cleaned for.</p>
+    </div>
+    <div class="rv-grid">
+      <div class="rv"><div class="stars">★★★★★</div><p>Professional, well priced and respectful. Went over every part of the job before starting.</p><div class="who"><span class="av">T</span><div><b>Tammy Farand</b><small><svg class="g" viewBox="0 0 24 24"><path fill="#4285F4" d="M22 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.6a4.8 4.8 0 01-2.1 3.1v2.6h3.4c2-1.8 3.1-4.5 3.1-7.5z"/><path fill="#34A853" d="M12 22c2.8 0 5.2-.9 6.9-2.5l-3.4-2.6c-.9.6-2.1 1-3.5 1-2.7 0-5-1.8-5.8-4.3H2.7v2.7A10 10 0 0012 22z"/><path fill="#FBBC05" d="M6.2 13.6a6 6 0 010-3.8V7.1H2.7a10 10 0 000 9.2z"/><path fill="#EA4335" d="M12 6c1.5 0 2.9.5 4 1.6l3-3A10 10 0 002.7 7.1l3.5 2.7C7 7.8 9.3 6 12 6z"/></svg>Google review</small></div></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><p>Same-day service, polite and professional, and helpful moving the furniture. The result was excellent.</p><div class="who"><span class="av">C</span><div><b>Cary Neil</b><small>Google review</small></div></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><p>Our carpets look so much better. Professional, transparent and trustworthy.</p><div class="who"><span class="av">M</span><div><b>Matthew Finch</b><small>Google review</small></div></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><p>Pet stains, hair and odour all gone, at an excellent price.</p><div class="who"><span class="av">M</span><div><b>Mariam Kentel</b><small>Google review</small></div></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><p>Booked on short notice and arrived on time. Our couch had not been cleaned in nine years, and they even did the kids' couch for free.</p><div class="who"><span class="av">K</span><div><b>Katerina Tsaprailis</b><small>Google review</small></div></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><p>Quick replies by text, a fair quote, floors protected the whole time, and every stain removed.</p><div class="who"><span class="av">L</span><div><b>Lisa Pozzobon</b><small>Google review</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="clients">
+  <div class="wrap">
+    <h3>Notable commercial clients</h3>
+    <div class="logos">
+      <div><img src="images/client-remax.png" alt="RE/MAX"></div>
+      <div><img src="images/client-academy.png" alt="The Academy"></div>
+      <div><img src="images/client-gamestop.png" alt="GameStop"></div>
+      <div><img src="images/client-travelodge.png" alt="Travelodge"></div>
+      <div><img src="images/client-mission-maids.png" alt="Mission Maids"></div>
+      <div><img src="images/client-luis-v.png" alt="Louis Vuitton"></div>
+      <div><img src="images/client-best-west.png" alt="Best Western"></div>
+      <div><img src="images/client-h-and-r.png" alt="H&amp;R Block"></div>
+      <div><img src="images/client-nescafe.png" alt="Nescafé"></div>
+      <div><img src="images/client-royal-lepage.png" alt="Royal LePage"></div>
+    </div>
+  </div>
+</div>
+
+<section class="learn">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><span class="kicker">Learn more</span><h2 class="disp">Go deeper</h2></div>
+      <p>See how we clean, what is included and what to expect on the day.</p>
+    </div>
+    <div class="lm-grid">
+      <a class="lm" href="https://www.mrsteamcalgary.ca/carpet-cleaning-in-calgary/"><img src="images/price-room.jpg" alt="Carpet cleaning in Calgary"><div class="in"><div><small>Visit our</small><h3>Carpet cleaning page</h3></div><span class="go">Click here</span></div></a>
+      <a class="lm" href="https://www.mrsteamcalgary.ca/couch-upholstery-cleaning-in-calgary/"><img src="images/upholstery-cleaning-bryce.jpg" alt="Couch upholstery cleaning in Calgary"><div class="in"><div><small>Visit our</small><h3>Upholstery cleaning page</h3></div><span class="go">Click here</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap ct-grid">
+    <div>
+      <span class="kicker">Contact</span>
+      <h2 class="disp">Text us.<br>We reply fast.</h2>
+      <p class="area">Serving Calgary and surrounding areas, Monday to Saturday.</p>
+      <div class="ct-list">
+        <a href="sms:(403)-702-6317"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg><span><small>Call or text (text preferred)</small><b>(403) 702-6317</b></span></a>
+        <a href="mailto:MrSteamCalgary@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg><span><small>Email</small><b>MrSteamCalgary@gmail.com</b></span></a>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Hours</small><b>Mon to Sat, 9 AM to 6 PM</b></span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Address</small><b>36 Mt Selkirk Close SE, Calgary, AB T2Z 2R6</b></span></div>
+      </div>
+    </div>
+    <form class="card" action="mailto:MrSteamCalgary@gmail.com" method="post" enctype="text/plain">
+      <h3>Send us a message</h3>
+      <p>Tell us what needs cleaning and we will get back to you.</p>
+      <div class="f2">
+        <label>Name<input name="name" required></label>
+        <label>Phone<input name="phone" type="tel"></label>
+      </div>
+      <label>Email<input name="email" type="email" required></label>
+      <label>Service
+        <select name="service">
+          <option>Carpet cleaning</option><option>Rug cleaning</option><option>Couch upholstery cleaning</option>
+          <option>Mattress cleaning</option><option>Commercial carpet cleaning</option><option>Scotchgard stain protection</option>
+        </select></label>
+      <label>Message<textarea name="message"></textarea></label>
+      <button class="btn btn-red" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div class="brand">
+        <img src="images/mr-steam-logo-static.png" alt="Mr. Steam™ Calgary">
+        <p>When you need it super clean, hire Mr. Steam! Carpet, rug, upholstery, mattress and commercial cleaning in Calgary.</p>
+        <a class="yt" href="https://www.youtube.com/@MrSteamFranchising" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 00-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 001 7.2 31 31 0 00.5 12 31 31 0 001 16.8a3 3 0 002.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 002.1-2.1A31 31 0 0023.5 12 31 31 0 0023 7.2zM9.7 15.1V8.9l5.8 3.1z"/></svg>YouTube</a>
+      </div>
+      <div><h5>Cleaning services</h5><ul>
+        <li><a href="https://www.mrsteamcalgary.ca/carpet-cleaning-in-calgary/">Carpet Cleaning</a></li>
+        <li><a href="https://www.mrsteamcalgary.ca/rug-cleaning-in-calgary/">Rug Cleaning</a></li>
+        <li><a href="https://www.mrsteamcalgary.ca/couch-upholstery-cleaning-in-calgary/">Couch Upholstery Cleaning</a></li>
+        <li><a href="https://www.mrsteamcalgary.ca/mattress-cleaning-in-calgary/">Mattress Cleaning</a></li>
+        <li><a href="https://www.mrsteamcalgary.ca/commercial-carpet-cleaning-in-calgary/">Commercial Carpet Cleaning</a></li>
+      </ul></div>
+      <div><h5>Company</h5><ul>
+        <li><a href="https://www.mrsteamcalgary.ca/about-us/">About Us</a></li>
+        <li><a href="https://app.squareup.com/gift/MLYXGEZXGC4H4/order" target="_blank" rel="noopener">Gift Cards</a></li>
+        <li><a href="https://www.mrsteamcalgary.ca/faq/">FAQ</a></li>
+        <li><a href="https://www.mrsteamcalgary.ca/book-online/">Book Online</a></li>
+      </ul></div>
+      <div><h5>Contact</h5><ul>
+        <li><a href="sms:(403)-702-6317">(403) 702-6317 (text preferred)</a></li>
+        <li><a href="mailto:MrSteamCalgary@gmail.com">MrSteamCalgary@gmail.com</a></li>
+        <li>36 Mt Selkirk Close SE, Calgary, AB T2Z 2R6</li>
+        <li>Mon to Sat, 9 AM to 6 PM</li>
+      </ul></div>
+    </div>
+    <p class="franchise">Each Mr. Steam™ location is independently owned and operated. Other locations: <a href="http://www.mrsteamfranchising.com/locations" target="_blank" rel="noopener">mrsteamfranchising.com/locations</a></p>
+    <div class="legal">
+      <span>© 2026 MrSteamFranchising.com</span>
+      <span>Design by <a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Cleaning Digital.</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mcta"><a href="sms:(403)-702-6317">Text us</a><a href="https://www.mrsteamcalgary.ca/book-online/">Book Online</a></div>
+
+<script>
+// before / after slider
+(function(){
+  var ba=document.getElementById('ba'),r=ba.querySelector('input'),a=ba.querySelector('.after'),h=ba.querySelector('.handle');
+  function set(v){a.style.clipPath='inset(0 0 0 '+v+'%)';h.style.left=v+'%'}
+  r.addEventListener('input',function(){set(r.value)});
+})();
+// estimate builder
+(function(){
+  var items=document.querySelectorAll('#items .item'),lines=document.getElementById('lines'),total=document.getElementById('total'),sms=document.getElementById('smsq');
+  function render(){
+    var sum=0,html='',txt=[];
+    items.forEach(function(it){
+      var q=+it.querySelector('output').value,p=+it.dataset.price;
+      it.classList.toggle('on',q>0);
+      if(q){sum+=q*p;html+='<div><span>'+q+' × '+it.dataset.name+'</span><span>$'+(q*p)+'</span></div>';txt.push(q+' x '+it.dataset.name)}
+    });
+    lines.innerHTML=html||'<span class="empty">Add a room, couch or rug to begin.</span>';
+    total.textContent='$'+sum;
+    sms.href='sms:(403)-702-6317'+(txt.length?'?&body='+encodeURIComponent('Hi Mr. Steam, I would like a quote for: '+txt.join(', ')):'');
+  }
+  items.forEach(function(it){
+    var b=it.querySelectorAll('button'),o=it.querySelector('output');
+    b[0].onclick=function(){o.value=Math.max(0,+o.value-1);render()};
+    b[1].onclick=function(){o.value=+o.value+1;render()};
+  });
+})();
+</script>
+</body>
+</html>
